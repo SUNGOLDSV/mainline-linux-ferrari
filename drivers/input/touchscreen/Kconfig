@@ -131,6 +131,19 @@ config TOUCHSCREEN_ATMEL_MXT
 	  To compile this driver as a module, choose M here: the
 	  module will be called atmel_mxt_ts.
 
+config TOUCHSCREEN_ATMEL_MXT336T
+        tristate "Atmel mXT336T I2C Touchscreen"
+        depends on I2C
+        select FW_LOADER
+        help
+          Say Y here if you have Atmel mXT336T series I2C touchscreen,
+          connected to your system.
+
+          If unsure, say N.
+
+          To compile this driver as a module, choose M here: the
+          module will be called atmel_mxt_ts_336t.
+
 config TOUCHSCREEN_ATMEL_MXT_T37
 	bool "Support T37 Diagnostic Data"
 	depends on TOUCHSCREEN_ATMEL_MXT
