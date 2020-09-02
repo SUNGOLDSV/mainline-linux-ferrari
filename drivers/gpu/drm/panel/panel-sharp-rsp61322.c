@@ -181,7 +181,6 @@ static const struct drm_display_mode sharp_rsp61322_mode = {
 	.vsync_start = 1920 + 7,
 	.vsync_end = 1920 + 7 + 2,
 	.vtotal = 1920 + 7 + 2 + 6,
-	.vrefresh = 60,
 	.width_mm = 61,
 	.height_mm = 109,
 };
