@@ -631,3 +631,4 @@
 	status = "okay";
 	linux,code = <KEY_VOLUMEDOWN>;
 };
+
