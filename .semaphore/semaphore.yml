@@ -16,10 +16,10 @@ blocks:
                                     #                                  - export USE_CCACHE=1
                                     #                                  - export CCACHE_DIR="$HOME/.ccache"
                                     #                                  - cache restore ccache
-                                    #                                  - checkout
-                                    #                  jobs:
-                          #                          - name: build
-                            #                            commands:
-                                    #                                    - make msm8939_defconfig pmosferrari.config
+                                  - checkout
+                  jobs:
+                          - name: build
+                            commands:
+                                    - make msm8939_defconfig pmosferrari.config
                                       #                                    - make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- -j$(nproc)
                                       #                                    - cache store ccache $HOME/.ccache
