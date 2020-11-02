@@ -1,0 +1,25 @@
+version: v1.0
+
+name: Pipeline for ferrari build
+
+agent:
+        machine:
+                type: e1-standard-2
+                os_image: ubuntu1804
+blocks:
+        - name: "Build"
+          task:
+                  prologue:
+                          commands:
+                                  - sudo apt-get update && sudo apt-get install build-essential ccache libncurses-dev bison flex libssl-dev libelf-dev bc gcc-aarch64-linux-gnu
+                                  - export PATH="/usr/lib/ccache:$PATH"
+                                  - export USE_CCACHE=1
+                                  - export CCACHE_DIR="$HOME/.ccache"
+                                  - cache restore ccache
+                                  - checkout
+                  jobs:
+                          - name: build
+                            commands:
+                                    - make msm8939_defconfig pmosferrari.config
+                                    - make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- -j$(nproc)
+                                    - cache store ccache $HOME/.ccache
