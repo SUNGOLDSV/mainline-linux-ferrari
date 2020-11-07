@@ -1,6 +1,6 @@
 version: v1.0
 
-name: Pipeline for ferrari build ci
+name: Pipeline for ferrari mainline kernel build
 agent:
         machine:
                 type: e1-standard-2
