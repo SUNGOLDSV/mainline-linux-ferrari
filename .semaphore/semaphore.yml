@@ -19,6 +19,6 @@ blocks:
                   jobs:
                           - name: build
                             commands:
-                                    - make msm8939_defconfig pmosferrari.config
+                                    - make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- -j$(nproc) msm8939_defconfig pmosferrari.config
                                     - make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- -j$(nproc)
                                     - cache store ccache $HOME/.ccache
